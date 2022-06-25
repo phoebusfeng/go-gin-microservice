@@ -1,1 +1,1 @@
-# go-gin-semaphore
+# go-gin-microservice

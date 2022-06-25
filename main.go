@@ -2,8 +2,6 @@ package main
 
 import (
 	"github.com/gin-gonic/gin"
-	"github.com/phoebusfeng/go-gin-microservice/handlers"
-	"net/http"
 )
 
 var router *gin.Engine

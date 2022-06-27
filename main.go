@@ -17,6 +17,7 @@ func main() {
 
 	// Handle Index
 	router.GET("/", showIndexPage)
+	router.GET("/article/view/:article_id", getArticle)
 
 	// Start serving the application
 	router.Run(":9999")

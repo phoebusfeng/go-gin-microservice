@@ -7,6 +7,7 @@ import (
 	"testing"
 
 	"github.com/gin-gonic/gin"
+	"github.com/phoebusfeng/go-gin-microservice/models"
 )
 
 var tmpArticleList []article

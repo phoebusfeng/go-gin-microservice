@@ -2,8 +2,7 @@ package main
 
 import (
 	"github.com/gin-gonic/gin"
-	"github.com/phoebusfeng/go-gin-mircoservice/handlers"
-	"github.com/phoebusfeng/go-gin-mircoservice/models"
+	a "github.com/phoebusfeng/go-gin-microservice/handlers"
 )
 
 var router *gin.Engine
@@ -18,8 +17,8 @@ func main() {
 	router.LoadHTMLGlob("templates/*")
 
 	// Handle Index
-	router.GET("/", showIndexPage)
-	router.GET("/article/view/:article_id", getArticle)
+	router.GET("/", a.ShowIndexPage)
+	router.GET("/article/view/:article_id", a.GetArticle)
 
 	// Start serving the application
 	router.Run(":9999")

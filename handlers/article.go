@@ -5,23 +5,23 @@ import (
 	"strconv"
 
 	"github.com/gin-gonic/gin"
-	"github.com/phoebusfeng/go-gin-microservice/models"
+	a "github.com/phoebusfeng/go-gin-microservice/models"
 )
 
-func showIndexPage(c *gin.Context) {
-	articles := getAllArticles()
+func ShowIndexPage(c *gin.Context) {
+	articles := a.GetAllArticles()
 
 	// Call the HTML method of the Context to render a template
-	render(c, gin.H{
+	Render(c, gin.H{
 		"title":   "Home Page",
 		"payload": articles,
 	}, "index.html")
 
 }
 
-func getArticle(c *gin.Context) {
+func GetArticle(c *gin.Context) {
 	if articleID, err := strconv.Atoi(c.Param("article_id")); err == nil {
-		if article, err := getArticleByID(articleID); err == nil {
+		if article, err := a.GetArticleByID(articleID); err == nil {
 			c.HTML(
 				http.StatusOK,
 				"article.html",
@@ -39,7 +39,7 @@ func getArticle(c *gin.Context) {
 	}
 }
 
-func render(c *gin.Context, data gin.H, templateName string) {
+func Render(c *gin.Context, data gin.H, templateName string) {
 
 	switch c.Request.Header.Get("Accept") {
 	case "application/json":
